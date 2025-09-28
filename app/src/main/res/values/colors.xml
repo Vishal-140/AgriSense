@@ -7,5 +7,7 @@
     <color name="purple">#7A35D5</color>
     <color name="red">#FF0000</color>
     <color name="green">#336D34</color>
+    <color name="text_green">#336D34</color>
+    <color name="orange">#F0A674</color>
 
 </resources>

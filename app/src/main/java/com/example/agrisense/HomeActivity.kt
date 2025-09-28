@@ -10,15 +10,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val btnAskQuery = findViewById<Button>(R.id.btnAskQuery)
-        val btnHistory = findViewById<Button>(R.id.btnHistory)
 
-        btnAskQuery.setOnClickListener {
-            // TODO: Open QueryActivity
-        }
-
-        btnHistory.setOnClickListener {
-            // TODO: Open HistoryActivity
-        }
     }
 }

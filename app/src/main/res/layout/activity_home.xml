@@ -32,7 +32,7 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             />
 
         <ImageView
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="Weather Condition"
                 android:textSize="18sp"
-                android:textColor="@color/gray"
+                android:textColor="@color/text_green"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"/>
 
@@ -138,8 +138,8 @@
                         android:layout_height="wrap_content"
                         android:text="An overview of Weather Condition"
                         android:textColor="@color/gray"
-                        android:textSize="12dp"
-                        android:textStyle="bold"/>
+                        android:textSize="14sp"
+                        />
 
                 </LinearLayout>
 
@@ -158,8 +158,8 @@
                             android:layout_height="wrap_content"
                             android:text="29°C"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
-                            android:textSize="25dp"/>
+                            android:textColor="@color/orange"
+                            android:textSize="27sp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -190,6 +190,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="33.2"
+                                android:textStyle="bold"
+                                android:textColor="@color/red"
+                                android:textSize="15sp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 />
@@ -203,6 +206,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textColor="@color/text_green"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
                                 android:text="25.3"/>
 
                         </LinearLayout>
@@ -231,8 +237,8 @@
             android:layout_height="wrap_content"
             android:text="AgriSense Smart Supports"
             android:layout_marginTop="20dp"
-            android:textColor="@color/gray"
-            android:textSize="18dp"
+            android:textColor="@color/text_green"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"
             />
@@ -282,7 +288,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         android:text="Chat"/>
 
                     <TextView
@@ -330,7 +336,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         android:text="Disease Scanner"/>
 
                     <TextView
@@ -391,7 +397,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:textSize="12dp"
+                        android:textSize="12sp"
                         android:text="Smart Recommendations"/>
 
                     <TextView
@@ -440,7 +446,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textStyle="bold"
-                        android:textSize="16dp"
+                        android:textSize="16sp"
                         android:text="Agriculture News"/>
 
                     <TextView
@@ -453,6 +459,13 @@
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plant Problem"/>
+
+
     </LinearLayout>
 </ScrollView>
 
