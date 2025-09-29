@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
     android:background="@color/white"
     tools:context=".HomeActivity">
 
-
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#018768"
         android:elevation="5dp"
         >
+
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -50,48 +51,49 @@
             android:layout_marginRight="20dp"
             android:src="@drawable/round_search_24"
             />
-
     </androidx.appcompat.widget.Toolbar>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-    <LinearLayout
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/scrollContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="20dp"
-        android:layout_marginBottom="40dp"
-        >
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavBar"
+        android:layout_below="@id/toolbar">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="40dp"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Welcome Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Welcome User"
                 android:layout_gravity="center"
-                android:textColor="@color/gray"
-                android:textAlignment="center"
-                android:textSize="16sp"/>
+                android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="220dp"
-                android:layout_gravity="end"
-                android:src="@drawable/user" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome User"
+                    android:layout_gravity="center"
+                    android:textColor="@color/gray"
+                    android:textAlignment="center"
+                    android:textSize="16sp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="220dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/user" />
+            </LinearLayout>
 
+            <!-- Weather Condition Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,252 +103,225 @@
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"/>
 
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            android:layout_marginTop="10dp"
-            >
-            <LinearLayout
+            <!-- Current Weather Card -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-
-                android:layout_margin="18dp">
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="18dp">
 
-                    android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Current Weather"
                         android:textStyle="bold"
-                        android:textSize="20dp"
-                        />
+                        android:textSize="20dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="An overview of Weather Condition"
                         android:textColor="@color/gray"
-                        android:textSize="14sp"
-                        />
+                        android:textSize="14sp"/>
 
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
+                    <!-- Temperature Section -->
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="29°C"
-                            android:textStyle="bold"
-                            android:textColor="@color/orange"
-                            android:textSize="27sp"/>
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/gray"
-                            android:text="Current Temperature"/>
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="30dp"
-                        >
-
+                        <!-- Current Temp -->
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/arrow_up"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="33.2"
-                                android:textStyle="bold"
-                                android:textColor="@color/red"
-                                android:textSize="15sp"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="10dp"
-                                />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/round_keyboard_arrow_down_24"/>
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:textColor="@color/text_green"
-                                android:textSize="15sp"
+                                android:text="29°C"
                                 android:textStyle="bold"
-                                android:text="25.3"/>
+                                android:textColor="@color/orange"
+                                android:textSize="27sp"/>
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/gray"
+                                android:text="Current Temperature"/>
                         </LinearLayout>
 
+                        <!-- Max & Min -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="30dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/arrow_up"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="33.2"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/red"
+                                    android:textSize="15sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="10dp"/>
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/round_keyboard_arrow_down_24"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/text_green"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:text="25.3"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Max And Min"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Smart Supports Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AgriSense Smart Supports"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/text_green"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Cards Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center_horizontal">
+
+                <!-- Chat Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="185dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/white"
+                    android:elevation="5dp"
+                    android:layout_marginBottom="15dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/chat_border"
+                            android:layout_marginBottom="10dp">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/chat"/>
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Max And Min"/>
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:text="Chat"/>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Get Instant farming advice"/>
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
+                <!-- Disease Scanner Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="180dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:elevation="5dp"
+                    android:backgroundTint="@color/white">
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
 
+                        <LinearLayout
+                            android:layout_width="120dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/scan_border"
+                            android:layout_marginBottom="10dp">
 
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/scan"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:text="Disease Scanner"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Identify Plant problem"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="AgriSense Smart Supports"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/text_green"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:gravity="center_horizontal"
-            >
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="185dp"
-                app:cardCornerRadius="20dp"
-                android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
-                android:elevation="5dp"
-                android:layout_marginBottom="15dp"
-                >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="120dp"
-                        android:layout_height="100dp"
-                        android:gravity="center"
-                        android:background="@drawable/chat_border"
-                        android:layout_marginBottom="10dp"
-                        >
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/chat"/>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:text="Chat"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:text="Get Instant farming advice"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="180dp"
-                app:cardCornerRadius="20dp"
-                android:layout_marginLeft="10dp"
-                android:elevation="5dp"
-                android:backgroundTint="@color/white"
-                >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="120dp"
-                        android:layout_height="100dp"
-                        android:gravity="center"
-                        android:background="@drawable/scan_border"
-                        android:layout_marginBottom="10dp"
-                        >
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/scan"/>
-
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:text="Disease Scanner"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:text="Identify Plant problem"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -430,10 +405,10 @@
                         android:background="@drawable/news_border"
                         android:layout_marginBottom="10dp"
                         >
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/news"/>
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/news"/>
 
                     </LinearLayout>
 
@@ -456,118 +431,116 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_green"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="Plant Problems ?"/>
-
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/card_corner"
-            android:padding="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="40dp"
-            android:orientation="vertical">
-
+            <!-- Plant Problems Section -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:layout_marginTop="10sp"
+                android:textColor="@color/text_green"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginBottom="15sp"
-                android:text="Find the best solutions for plant health !" />
+                android:text="Plant Problems ?"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/bad_leaf" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Identify Problem" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/arrow_for_dot"/>
-
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/leaf_solution" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Get solution" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/button_corner"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                >
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/camera_icon"/>
+                android:background="@drawable/card_corner"
+                android:padding="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10sp"
                     android:textStyle="bold"
                     android:textSize="16sp"
-                    android:layout_marginLeft="5dp"
-                    android:text="Take a Picture"/>
+                    android:layout_marginBottom="15sp"
+                    android:text="Find the best solutions for plant health !" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/bad_leaf" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Identify Problem" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/arrow_for_dot"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/leaf_solution" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="Get solution" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/button_corner"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/camera_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Take a Picture"/>
+                </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
+    </ScrollView>
 
-
-
-    </LinearLayout>
-</ScrollView>
-
-
-</LinearLayout>
+    <!-- Bottom Navigation -->
+    <include
+        android:id="@+id/bottomNavBar"
+        layout="@layout/bottom_nav"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

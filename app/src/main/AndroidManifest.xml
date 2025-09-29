@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AgriSense">
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -32,6 +33,21 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <!-- Bottom Navigation Activities -->
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DiseaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
