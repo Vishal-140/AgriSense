@@ -16,7 +16,7 @@ class SignupActivity : AppCompatActivity() {
 
         btnSignup.setOnClickListener {
             // TODO: Add signup logic (Firebase / local storage)
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, UserDetail::class.java))
             finish()
         }
 

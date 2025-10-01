@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AgriSense">
-
+        <activity
+            android:name=".UserDetail"
+            android:exported="false" />
         <activity
             android:name=".News_page"
             android:exported="false" />
@@ -35,9 +37,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-
-        <!-- Bottom Navigation Activities -->
+            android:exported="false" /> <!-- Bottom Navigation Activities -->
         <activity
             android:name=".WeatherActivity"
             android:exported="false" />
@@ -50,7 +50,6 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>
