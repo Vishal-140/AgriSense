@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AgriSense">
         <activity
+            android:name=".Recommendation"
+            android:exported="false" />
+        <activity
             android:name=".UserDetail"
             android:exported="false" />
         <activity

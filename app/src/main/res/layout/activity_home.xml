@@ -340,6 +340,7 @@
             >
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/recommendCrop"
                 android:layout_width="160dp"
                 android:layout_height="180dp"
                 app:cardCornerRadius="20dp"
@@ -347,7 +348,7 @@
                 android:backgroundTint="@color/white"
                 android:elevation="5dp"
                 android:layout_marginBottom="15dp"
-                >
+                >a
 
                 <LinearLayout
                     android:layout_width="wrap_content"

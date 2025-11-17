@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="temp_ranges">
+        <item>Select Temperature</item>
+        <item>10°C - 20°C (Cool)</item>
+        <item>20°C - 30°C (Moderate)</item>
+        <item>30°C - 40°C (Hot)</item>
+        <item>40°C - 45°C (Very Hot)</item>
+    </string-array>
+
+    <string-array name="humidity_ranges">
+        <item>Select Humidity</item>
+        <item>20% - 40% (Low)</item>
+        <item>40% - 60% (Medium)</item>
+        <item>60% - 80% (High)</item>
+        <item>80% - 95% (Very High)</item>
+    </string-array>
+
+    <string-array name="soil_types">
+        <item>Select Soil Type</item>
+        <item>Loamy (Best Overall)</item>
+        <item>Clay (Water-holding)</item>
+        <item>Sandy (Fast Drainage)</item>
+        <item>Black Soil (Cotton Soil)</item>
+        <item>Red Soil</item>
+        <item>Alluvial Soil</item>
+    </string-array>
+
+</resources>
+
